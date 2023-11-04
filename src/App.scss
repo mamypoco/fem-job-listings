@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+@import "./styles/_variables.scss";
+
+// color
+// $primary-cyan: hsl(180, 29%, 50%);
+// $light-grayish-cyan-bg: hsl(180, 52%, 96%);
+// $light-grayish-cyan-filter: hsl(180, 31%, 95%);
+// $dark-grayish-cyan: hsl(180, 8%, 52%);
+// $very-dark-grayish-cyan: hsl(180, 14%, 20%);
+
+.fullpage {
+  max-width: 1440px;
+  @media only screen and (max-width: 480px) {
+    max-width: 375px;
+  }
+}
+
+.contents-wrapper {
+  background-color: $light-grayish-cyan-bg;
+}

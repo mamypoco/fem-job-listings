@@ -1,0 +1,9 @@
+.fullpage {
+  max-width: 1440px;
+  background-color: hsl(180, 52%, 96%);
+}
+@media only screen and (max-width: 480px) {
+  .fullpage {
+    max-width: 375px;
+  }
+}/*# sourceMappingURL=App.css.map */
