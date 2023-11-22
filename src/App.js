@@ -1,15 +1,18 @@
 import "./App.scss";
 import Header from "./components/header/Header";
 import JobLists from "./components/joblists/JobLists";
+import FilterBox from "./components/filterBox/FilterBox";
 
 function App() {
   return (
     <div className="App">
-      <div className="fullpage">
-        <Header />
+      <Header />
+      <div className="contents">
+        <FilterBox />
         <JobLists />
       </div>
     </div>
+    //  </div>
   );
 }
 

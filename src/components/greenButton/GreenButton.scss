@@ -1,0 +1,10 @@
+@import "../../styles/_variables";
+
+.wrapper {
+  background-color: $primary-cyan;
+  font-size: 13px;
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.2rem 0.5rem;
+}

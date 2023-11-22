@@ -1,6 +1,71 @@
 @import "../../styles/_variables";
 
-.wrapper {
+.card-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: white;
+  gap: 7rem;
+  padding: 1rem;
+  margin: 1.5rem 5em;
+  border-radius: 5px;
 }
+
+.left-column {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.company-logo {
+  display: flex-wrap;
+}
+
+.left-column-text {
+  max-width: 20rem;
+}
+
+.right-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.row-one {
+  display: flex;
+  font-size: 15px;
+  font-weight: 700;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  .company {
+    color: $primary-cyan;
+  }
+}
+
+.row-two {
+  display: flex;
+  font-size: 17px;
+  font-weight: 700;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.row-three {
+  display: flex;
+  color: gray;
+  font-size: 15px;
+  font-weight: 600;
+  gap: 1rem;
+}
+
+.array-split {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+
+// .tools {
+//   display: flex;
+//   gap: 1rem;
+//   gap: 1rem;
+// }

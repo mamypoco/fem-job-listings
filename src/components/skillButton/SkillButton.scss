@@ -1,0 +1,17 @@
+@import "../../styles/_variables";
+
+.skill-wrapper {
+  background-color: $light-grayish-cyan-bg;
+  font-size: 14px;
+  color: $primary-cyan;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-cyan;
+    color: white;
+    //  cursor: pointer;
+  }
+}

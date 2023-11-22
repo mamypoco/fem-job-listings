@@ -1,0 +1,26 @@
+@import "../../styles/_variables";
+
+.skill-x-wrapper {
+  display: flex;
+  height: 1.8rem;
+  border-radius: 10px;
+  gap: 0;
+}
+
+.skill-item {
+  //   display: flex;
+  background-color: $light-grayish-cyan-bg;
+  font-size: 14px;
+  color: $primary-cyan;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+}
+
+.cross-mark {
+  //   display: flex;
+  background-color: $primary-cyan;
+  font-size: 14px;
+  color: white;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+}

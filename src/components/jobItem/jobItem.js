@@ -1,42 +1,79 @@
-import data from "../../asset/data.json";
 import "./jobitem.scss";
+import GreenButton from "../greenButton/GreenButton";
+import BlackButton from "../blackButton/BlackButton";
+import SkillButton from "../skillButton/SkillButton";
+import { useState } from "react";
 
-const JobItem = () => {
-  //   const Job = {
-  //     id: data.id,
-  //     company: data.company,
-  //     logo: data.logo,
-  //     new: data.new,
-  //     featured: data.featured,
-  //     position: data.position,
-  //     role: data.role,
-  //     level: data.level,
-  //     postedAt: data.postedAt,
-  //     contract: data.contract,
-  //     location: data.location,
-  //     languages: data.language,
-  //     tools: data.tools,
-  //   };
+const JobItem = ({ data }) => {
+  const {
+    logo,
+    company,
+    isnew,
+    featured,
+    position,
+    postedAt,
+    contract,
+    location,
+    role,
+    level,
+    languages,
+    tools,
+  } = data;
 
-  //   const jobid = data.id - 1;
+  //new is a reserved keyword in JavaScript. You cannot use reserved keywords as property names directly.
+  const logoImage = `/images/${logo}`;
+  //   const isNew = isnew;
+  //   const isFeatured = featured;
+
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  const AddFilteredItems = (skill) => {
+    setFilteredItems([...filteredItems, skill]);
+
+    console.log(filteredItems);
+  };
 
   return (
-    <div className="wrapper">
-      <div className="left-content">
-        <img className="logo" src="../../images/photosnap.svg" alt="" />
-        <div className="company">{data[0].company}</div>
-        <div className="new">New!</div>
-        <div className="featured">Featured</div>
-        <div className="position">Senior Frontend Developer</div>
-        <div className="when">1d ago</div>
-        <div lang="contract">Full Time</div>
-        <div className="location">USA only</div>
+    <div className="card-wrapper">
+      <div className="left-column">
+        <div className="company-logo">
+          <img
+            className="logo"
+            src={process.env.PUBLIC_URL + logoImage}
+            alt={company}
+          />
+        </div>
+        <div className="left-column-text">
+          <div className="row-one">
+            <div className="company">{company}</div>
+            <div className="new">{isnew ? <GreenButton /> : ""}</div>
+            <div className="featured">{featured ? <BlackButton /> : ""}</div>
+          </div>
+          <div className="row-two">
+            <div className="position">{position}</div>
+          </div>
+          <div className="row-three">
+            {postedAt}&nbsp; • &nbsp;{contract}&nbsp; • &nbsp; {location}
+          </div>
+        </div>
       </div>
-      <div className="right-content">
-        <div className="role">Frontend</div>
-        <div className="level">Senior</div>
-        <div className="languages">HTML CSS JavaScript</div>
-        <div className="tools">React</div>
+      <div className="right-column">
+        <div className="role">
+          <SkillButton children={role} />
+        </div>
+        <div className="level">
+          <SkillButton children={level} />
+        </div>
+        <div className="array-split">
+          {languages.map((item) => {
+            return <SkillButton children={item} onClick={AddFilteredItems} />;
+          })}
+        </div>
+        <div className="array-split">
+          {tools.map((item) => {
+            return <SkillButton children={item} onClick={AddFilteredItems} />;
+          })}
+        </div>
       </div>
     </div>
   );

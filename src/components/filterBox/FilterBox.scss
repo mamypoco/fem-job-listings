@@ -1,0 +1,36 @@
+@import "../../styles/_variables";
+
+.filter-box {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  background-color: white;
+  min-height: 3rem;
+  width: 83%;
+  top: -7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 1rem;
+  align-items: center;
+}
+
+.skills-box {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.clear-option {
+  font-size: 15px;
+  color: $primary-cyan;
+  font-weight: 700;
+  text-decoration: underline;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
