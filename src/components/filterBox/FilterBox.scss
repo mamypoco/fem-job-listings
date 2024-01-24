@@ -33,4 +33,9 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 1rem;
+
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
 }

@@ -2,7 +2,8 @@ import "./jobitem.scss";
 import GreenButton from "../greenButton/GreenButton";
 import BlackButton from "../blackButton/BlackButton";
 import SkillButton from "../skillButton/SkillButton";
-import { useState } from "react";
+import { useContext } from "react";
+import { SkillsContext } from "../../context/SkillsContext";
 
 const JobItem = ({ data }) => {
   const {
@@ -14,24 +15,12 @@ const JobItem = ({ data }) => {
     postedAt,
     contract,
     location,
-    role,
-    level,
-    languages,
-    tools,
+    tags,
   } = data;
-
   //new is a reserved keyword in JavaScript. You cannot use reserved keywords as property names directly.
   const logoImage = `/images/${logo}`;
-  //   const isNew = isnew;
-  //   const isFeatured = featured;
 
-  const [filteredItems, setFilteredItems] = useState([]);
-
-  const AddFilteredItems = (skill) => {
-    setFilteredItems([...filteredItems, skill]);
-
-    console.log(filteredItems);
-  };
+  const { AddFilter } = useContext(SkillsContext);
 
   return (
     <div className="card-wrapper">
@@ -58,22 +47,13 @@ const JobItem = ({ data }) => {
         </div>
       </div>
       <div className="right-column">
-        <div className="role">
-          <SkillButton children={role} />
-        </div>
-        <div className="level">
-          <SkillButton children={level} />
-        </div>
-        <div className="array-split">
-          {languages.map((item) => {
-            return <SkillButton children={item} onClick={AddFilteredItems} />;
-          })}
-        </div>
-        <div className="array-split">
-          {tools.map((item) => {
-            return <SkillButton children={item} onClick={AddFilteredItems} />;
-          })}
-        </div>
+        {tags.map((tag, index) => (
+          <SkillButton
+            key={index}
+            children={tag}
+            onClick={() => AddFilter(tag)}
+          />
+        ))}
       </div>
     </div>
   );

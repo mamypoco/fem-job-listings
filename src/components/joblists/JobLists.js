@@ -1,12 +1,14 @@
-// import SearchBox from "../searchBox/SearchBox";
 import JobItem from "../jobItem/jobItem";
-import data from "../../asset/data.json";
 import "./JobLists.scss";
+import { useContext } from "react";
+import { SkillsContext } from "../../context/SkillsContext";
 
 const JobLists = () => {
+  const { allJobs } = useContext(SkillsContext);
+
   return (
     <div className="joblist-container">
-      {data.map((item, index) => (
+      {allJobs.map((item, index) => (
         <JobItem key={index} data={item} />
       ))}
     </div>
