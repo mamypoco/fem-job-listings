@@ -20,7 +20,7 @@ const JobItem = ({ data }) => {
   //new is a reserved keyword in JavaScript. You cannot use reserved keywords as property names directly.
   const logoImage = `/images/${logo}`;
 
-  const { AddFilter } = useContext(SkillsContext);
+  const { addFilter } = useContext(SkillsContext);
 
   return (
     <div className="card-wrapper">
@@ -51,7 +51,7 @@ const JobItem = ({ data }) => {
           <SkillButton
             key={index}
             children={tag}
-            onClick={() => AddFilter(tag)}
+            onClick={() => addFilter(tag)}
           />
         ))}
       </div>

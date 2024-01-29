@@ -8,6 +8,11 @@
   padding: 1rem;
   margin: 1.5rem 5em;
   border-radius: 5px;
+  box-shadow: 1px 1px 20px rgb(173, 211, 224);
+
+  @media only screen and (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .left-column {
