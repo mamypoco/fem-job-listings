@@ -2,17 +2,13 @@
 
 .card-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   background-color: white;
-  gap: 7rem;
-  padding: 1rem;
-  margin: 1.5rem 5em;
+  gap: 1rem;
+  padding: 1.5rem;
   border-radius: 5px;
   box-shadow: 1px 1px 20px rgb(173, 211, 224);
-
-  @media only screen and (max-width: 400px) {
-    grid-template-columns: 1fr;
-  }
+  //   border-left: 5px solid $primary-cyan;
 }
 
 .left-column {
@@ -28,12 +24,16 @@
   max-width: 20rem;
 }
 
+hr {
+  display: none;
+}
+
 .right-column {
   display: flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1rem;
   align-items: center;
-  padding: 1rem;
 }
 
 .row-one {
@@ -69,8 +69,24 @@
   gap: 0.8rem;
 }
 
-// .tools {
-//   display: flex;
-//   gap: 1rem;
-//   gap: 1rem;
-// }
+@media screen and (max-width: 600px) {
+  hr {
+    display: block;
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(197, 193, 193);
+  }
+  .right-column {
+    justify-content: start;
+  }
+  .logo {
+    max-width: 48px;
+    max-height: 48px;
+  }
+  .left-column {
+    margin-top: -2.5rem;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+}

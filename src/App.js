@@ -8,14 +8,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="contents">
+      <main className="contents">
         <SkillsContextProvider>
           <FilterBox />
           <JobLists />
         </SkillsContextProvider>
-      </div>
+      </main>
     </div>
-    //  </div>
   );
 }
 

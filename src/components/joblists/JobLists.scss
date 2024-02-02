@@ -1,5 +1,7 @@
 @import "../../styles/_variables";
 
 .joblist-container {
-  margin: 4rem 0;
+  display: grid;
+  gap: 2rem;
+  margin: 2rem 0;
 }

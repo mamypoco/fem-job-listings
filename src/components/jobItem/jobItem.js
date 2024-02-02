@@ -1,4 +1,5 @@
 import "./jobitem.scss";
+import "../../styles/_variables.scss";
 import GreenButton from "../greenButton/GreenButton";
 import BlackButton from "../blackButton/BlackButton";
 import SkillButton from "../skillButton/SkillButton";
@@ -22,8 +23,16 @@ const JobItem = ({ data }) => {
 
   const { addFilter } = useContext(SkillsContext);
 
+  const colors = {
+    primaryCyan: "hsl(180, 29%, 50%)",
+  };
+
+  const featureStyle = {
+    borderLeft: `5px solid ${colors.primaryCyan}`,
+  };
+
   return (
-    <div className="card-wrapper">
+    <div className="card-wrapper" style={featured ? featureStyle : null}>
       <div className="left-column">
         <div className="company-logo">
           <img
@@ -35,8 +44,8 @@ const JobItem = ({ data }) => {
         <div className="left-column-text">
           <div className="row-one">
             <div className="company">{company}</div>
-            <div className="new">{isnew ? <GreenButton /> : ""}</div>
-            <div className="featured">{featured ? <BlackButton /> : ""}</div>
+            <div className="new">{isnew ? <GreenButton /> : null}</div>
+            <div className="featured">{featured ? <BlackButton /> : null}</div>
           </div>
           <div className="row-two">
             <div className="position">{position}</div>
@@ -46,6 +55,8 @@ const JobItem = ({ data }) => {
           </div>
         </div>
       </div>
+      {/* {window.innerWidth < 600 ? <hr /> : null} */}
+      <hr />
       <div className="right-column">
         {tags.map((tag, index) => (
           <SkillButton

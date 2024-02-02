@@ -8,26 +8,30 @@ const FilterBox = () => {
   const { skillsList, removeFilter, clearFilter } = useContext(SkillsContext);
 
   return (
-    skillsList &&
-    skillsList.length > 0 && (
-      <div className="filter-box">
-        <div className="skills-box">
-          {skillsList.map((item, index) => (
-            <SkillButtonX
-              key={index}
-              children={item}
-              onClick={() => removeFilter(item)}
-            />
-          ))}
-        </div>
+    //  hidden or show depends on the opacity. This way, the filterbox is always there so joblist will stays.
+    <div
+      className="filter-box"
+      style={
+        skillsList && skillsList.length > 0 ? { opacity: 1 } : { opacity: 0 }
+      }
+    >
+      <div className="skills-box">
+        {skillsList.map((item, index) => (
+          <SkillButtonX
+            key={index}
+            children={item}
+            onClick={() => removeFilter(item)}
+          />
+        ))}
+      </div>
 
-        <div className="clear-box">
-          <div className="clear-option" onClick={clearFilter}>
-            clear
-          </div>
+      <div className="clear-box">
+        <div className="clear-option" onClick={clearFilter}>
+          clear
         </div>
       </div>
-    )
+    </div>
+    //  )
   );
 };
 

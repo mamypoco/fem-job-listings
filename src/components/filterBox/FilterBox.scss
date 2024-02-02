@@ -1,16 +1,15 @@
 @import "../../styles/_variables";
 
 .filter-box {
-  position: absolute;
+  //   position: absolute;
+  //   top: -6.5rem;
+  //   width: 100%;
+  //   margin-top: -2rem;
   display: grid;
-  grid-template-columns: 11fr 1fr;
+  grid-template-columns: 10fr 1fr;
   background-color: white;
   min-height: 3rem;
-  width: 83%;
-  top: -7rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+
   border: none;
   border-radius: 5px;
   padding: 1rem 1rem;

@@ -8,19 +8,18 @@
 // $dark-grayish-cyan: hsl(180, 8%, 52%);
 // $very-dark-grayish-cyan: hsl(180, 14%, 20%);
 
-body {
+main {
   position: relative;
   max-width: 1440px;
   margin: auto;
-  background-color: $light-grayish-cyan-bg;
-}
+  margin-top: -2.5rem;
+  padding: 0 1rem;
 
-@media only screen and (max-width: 400px) {
-  body {
-    max-width: 375px;
+  @media only screen and (max-width: 400px) {
+    max-width: 400px;
   }
 }
 
-.contents {
-  position: relative;
+body {
+  background: $light-grayish-cyan-bg;
 }
