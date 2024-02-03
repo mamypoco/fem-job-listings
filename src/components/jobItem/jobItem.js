@@ -55,7 +55,7 @@ const JobItem = ({ data }) => {
           </div>
         </div>
       </div>
-      {/* {window.innerWidth < 600 ? <hr /> : null} */}
+      {/* {window.innerWidth < 600 && <hr />} */}
       <hr />
       <div className="right-column">
         {tags.map((tag, index) => (

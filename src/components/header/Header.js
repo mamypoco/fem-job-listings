@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="header">
       <img
-        src={window.innerWidth >= 600 ? desktopHeader : mobileHeader}
+        src={window.innerWidth > 600 ? desktopHeader : mobileHeader}
         alt="header"
       />
     </div>

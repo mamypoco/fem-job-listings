@@ -8,7 +8,6 @@
   padding: 1.5rem;
   border-radius: 5px;
   box-shadow: 1px 1px 20px rgb(173, 211, 224);
-  //   border-left: 5px solid $primary-cyan;
 }
 
 .left-column {
@@ -22,10 +21,6 @@
 
 .left-column-text {
   max-width: 20rem;
-}
-
-hr {
-  display: none;
 }
 
 .right-column {
@@ -69,7 +64,11 @@ hr {
   gap: 0.8rem;
 }
 
-@media screen and (max-width: 600px) {
+hr {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
   hr {
     display: block;
     border: none;
@@ -77,6 +76,7 @@ hr {
     width: 100%;
     background-color: rgb(197, 193, 193);
   }
+
   .right-column {
     justify-content: start;
   }
