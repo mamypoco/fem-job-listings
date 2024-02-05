@@ -8,7 +8,7 @@ const FilterBox = () => {
   const { skillsList, removeFilter, clearFilter } = useContext(SkillsContext);
 
   return (
-    //  hidden or show depends on the opacity. This way, the filterbox is always there so joblist will stays.
+    //  hidden or show if skillList is there using opacity. This way, the filterbox stays in the position so joblist stays together.
     <div
       className="filter-box"
       style={
