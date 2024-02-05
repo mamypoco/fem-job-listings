@@ -7,13 +7,11 @@ const JobLists = () => {
   const { allJobs } = useContext(SkillsContext);
 
   return (
-    <ul className="joblist-container">
+    <div className="joblist-container">
       {allJobs.map((item, index) => (
-        <li>
-          <JobItem key={index} data={item} />
-        </li>
+        <JobItem key={index} data={item} />
       ))}
-    </ul>
+    </div>
   );
 };
 
